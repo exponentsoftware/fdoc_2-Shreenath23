@@ -43,11 +43,12 @@ const users = [
 	}
 	];
 
-   const scoresGreaterThan85 = (users) => {
-       const scores85 = users.filter((item,index) => item.scores > 85);
+const scoresGreaterThan85 = (users) => {
+	const scores85 = users.filter((item,index) => item.scores > 85);
        console.log(scores85);
-   };
-   scoresGreaterThan85(users);
+};
+scoresGreaterThan85(users);
+
 function addUser(user) {
 	var index = users.findIndex(x => x.name == user.name)
 	if (index === -1){
@@ -61,21 +62,21 @@ addUser(user);
 console.log(users);
 
 
-  const  addUserSkills =(user) => {
-	  const skill = [...users]
-	  const findSkill = skill.filter((item,index) => item.name ==user.name)
-	  if(findSkill.length == 0){
-		  return console.log("user doesn't exist");
-	  }
-	  findSkill[0].skills.push(...user.skills)
-	  console.log(findSkill[0].skills)
-	  console.log(addUserSkills);
-  }
-    newUserSkill = {
-	name: "Alex",
-	score: 80,
-	skills: ["MongoDB", "Node.Js", "Express"],
-	age: 25
+const  addUserSkills =(user) => {
+	const skill = [...users]
+	const findSkill = skill.filter((item,index) => item.name ==user.name)
+	if(findSkill.length == 0){
+		return console.log("user doesn't exist");
 	}
-	addUserSkills(newUserSkill);
-    console.log(users);
+	findSkill[0].skills.push(...user.skills)
+	console.log(findSkill[0].skills)
+	console.log(addUserSkills);
+}
+newUserSkill = {
+name: "Alex",
+score: 80,
+skills: ["MongoDB", "Node.Js", "Express"],
+age: 25
+}
+addUserSkills(newUserSkill);
+console.log(users);
